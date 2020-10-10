@@ -1,1 +1,1 @@
-<?php header('Location: list-pegawai.php') ?>
+<?php header('Location: list-pegawai.html') ?>

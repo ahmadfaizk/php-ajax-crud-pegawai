@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Master Pegawai | Sertifikasi</title>
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/datatables/css/datatables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/sweetalert2/css/sweetalert2.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded mb-4 mt-4">
+            <a class="navbar-brand" href="/">SIM Perusahaan</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="list-pegawai.html">Pegawai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="list-departemen.html">Departemen</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="card-title mb-0">Data Master Pegawai</h5>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary float-right" id="btn-create">Buat Baru</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered responsive no-wrap" id="table" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Departemen</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form id="form">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="form-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="id">
+                        <div class="form-group">
+                            <label for="nama">Nama Pegawai</label>
+                            <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Departemen</label>
+                            <select class="form-control" name="id_departemen" id="departemen" required>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis Kelamin</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="gender-man"
+                                    value="laki-laki">
+                                <label class="form-check-label">Laki-laki</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="gender-male"
+                                    value="perempuan">
+                                <label class="form-check-label">Perempuan</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat</label>
+                            <textarea class="form-control" name="alamat" id="alamat" rows="3" placeholder="Alamat"
+                                required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary" id="btn-save">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="plugins/jquery/jquery-3.5.1.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/datatables/js/datatables.min.js"></script>
+    <script src="plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/sweetalert2/js/sweetalert2.min.js"></script>
+    <script src="dist/js/pegawai.js"></script>
+</body>
+
+</html>
