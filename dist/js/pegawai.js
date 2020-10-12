@@ -13,7 +13,7 @@ $(function () {
                 data: 'nama_departemen',
             },
             {
-                data: 'gender',
+                data: 'jenis_kelamin',
             },
             {
                 data: 'alamat',
@@ -76,7 +76,9 @@ $(function () {
             $('#nama').val(pegawai.nama);
             $('#alamat').val(pegawai.alamat);
             $('#departemen').val(pegawai.id_departemen);
-            $('input[name=gender][value=' + pegawai.gender + ']').attr('checked', true);
+            $('#tempat-lahir').val(pegawai.tempat_lahir);
+            $('#tgl-lahir').val(pegawai.tgl_lahir);
+            $('input[name=jenis_kelamin][value=' + pegawai.jenis_kelamin + ']').attr('checked', true);
             $('#form-modal').modal('show');
         })
     })
@@ -98,6 +100,7 @@ $(function () {
     })
 
     function createPegawai(data) {
+        console.log(data);
         $.ajax({
             url: 'action-pegawai.php?action=new',
             type: 'post',

@@ -16,15 +16,16 @@ class Pegawai extends BaseModel {
         return $this->db->getSingleResult($sql);
     }
 
-    public function create($idDepartemen, $nama, $gender, $alamat) {
-        $sql = "INSERT INTO pegawai (id_departemen, nama, gender, alamat)
-            VALUES ('$idDepartemen', '$nama', '$gender', '$alamat')";
+    public function create($idDepartemen, $nama, $tempatLahir, $tglLahir, $jenisKelamin, $alamat) {
+        $sql = "INSERT INTO pegawai (id_departemen, nama, tempat_lahir, tgl_lahir, jenis_kelamin, alamat)
+            VALUES ('$idDepartemen', '$nama', '$tempatLahir', '$tglLahir', '$jenisKelamin', '$alamat')";
         return $this->db->getResult($sql);
     }
 
-    public function update(int $id, $idDepartemen, $nama, $gender, $alamat) {
+    public function update(int $id, $idDepartemen, $nama, $tempatLahir, $tglLahir, $jenisKelamin, $alamat) {
         $sql = "UPDATE pegawai
-            SET id_departemen='$idDepartemen', nama='$nama', gender='$gender', alamat='$alamat'
+            SET id_departemen='$idDepartemen', nama='$nama', tempat_lahir='$tempatLahir', 
+                tgl_lahir='$tglLahir', jenis_kelamin='$jenisKelamin', alamat='$alamat'
             WHERE id=$id";
         return $this->db->getResult($sql);
     }

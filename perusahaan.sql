@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 04, 2020 at 02:14 PM
+-- Generation Time: Oct 12, 2020 at 03:48 PM
 -- Server version: 8.0.21-0ubuntu0.20.04.4
 -- PHP Version: 7.4.3
 
@@ -42,7 +42,9 @@ INSERT INTO `departemen` (`id`, `nama`) VALUES
 (2, 'Marketing'),
 (3, 'Keuangan'),
 (4, 'Gudang'),
-(12, 'Komputer A');
+(15, 'Gabut banget'),
+(19, 'tau'),
+(20, 'mboh sih, gtw');
 
 -- --------------------------------------------------------
 
@@ -54,7 +56,9 @@ CREATE TABLE `pegawai` (
   `id` int NOT NULL,
   `id_departemen` int NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `gender` enum('laki-laki','perempuan') NOT NULL,
+  `jenis_kelamin` enum('Laki-laki','Perempuan') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `tempat_lahir` varchar(255) NOT NULL,
+  `tgl_lahir` date NOT NULL,
   `alamat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -62,11 +66,9 @@ CREATE TABLE `pegawai` (
 -- Dumping data for table `pegawai`
 --
 
-INSERT INTO `pegawai` (`id`, `id_departemen`, `nama`, `gender`, `alamat`) VALUES
-(1, 1, 'Ahmad Faiz Kamaludin', 'laki-laki', 'Nganjuk'),
-(2, 2, 'Rinda Cahya Nahdliana', 'perempuan', 'Jombang'),
-(3, 3, 'Luri Shafira Amalia', 'perempuan', 'Surabaya'),
-(8, 1, 'Silfiana', 'perempuan', 'Madura Jatim');
+INSERT INTO `pegawai` (`id`, `id_departemen`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `alamat`) VALUES
+(13, 1, 'Faiz', 'Laki-laki', 'Nganjuk k', '2020-10-01', 'Nganjuk jata'),
+(14, 1, 'Ahmad', 'Laki-laki', 'ad', '2020-10-02', 'daww');
 
 --
 -- Indexes for dumped tables
@@ -93,13 +95,13 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `departemen`
 --
 ALTER TABLE `departemen`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables

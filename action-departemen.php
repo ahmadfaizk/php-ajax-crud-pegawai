@@ -48,6 +48,6 @@ switch ($_REQUEST['action']) {
         }
         break;
     default:
-        die('Action Error');
+        sendResponse(false, 'Error', null);
         break;
 }

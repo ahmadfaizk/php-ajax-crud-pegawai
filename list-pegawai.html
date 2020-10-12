@@ -58,7 +58,7 @@
     </div>
 
     <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <form id="form">
                     <div class="modal-header">
@@ -78,16 +78,30 @@
                             <select class="form-control" name="id_departemen" id="departemen" required>
                             </select>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="tempat-lahir">Tempat Lahir</label>
+                                    <input type="text" class="form-control" name="tempat_lahir" id="tempat-lahir" placeholder="Tempat Lahir" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="tgl-lahir">Tanggal Lahir</label>
+                                    <input type="date" class="form-control" name="tgl_lahir" id="tgl-lahir" placeholder="Tanggal Lahir" required>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label>Jenis Kelamin</label><br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="gender-man"
-                                    value="laki-laki">
+                                <input class="form-check-input" type="radio" name="jenis_kelamin" id="gender-man"
+                                    value="Laki-laki">
                                 <label class="form-check-label">Laki-laki</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="gender-male"
-                                    value="perempuan">
+                                <input class="form-check-input" type="radio" name="jenis_kelamin" id="gender-male"
+                                    value="Perempuan">
                                 <label class="form-check-label">Perempuan</label>
                             </div>
                         </div>

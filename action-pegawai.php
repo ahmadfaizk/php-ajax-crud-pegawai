@@ -20,25 +20,29 @@ switch ($_REQUEST['action']) {
         }
         break;
     case 'new':
-        checkParameter(['id_departemen', 'nama', 'gender', 'alamat']);
+        checkParameter(['id_departemen', 'nama', 'tempat_lahir', 'tgl_lahir','jenis_kelamin', 'alamat']);
         $idDepartemen = $_REQUEST['id_departemen'];
         $nama = $_REQUEST['nama'];
-        $gender = $_REQUEST['gender'];
+        $tempatLahir = $_REQUEST['tempat_lahir'];
+        $tglLahir = $_REQUEST['tgl_lahir'];
+        $jenisKelamin = $_REQUEST['jenis_kelamin'];
         $alamat = $_REQUEST['alamat'];
-        if ($pegawai->create($idDepartemen, $nama, $gender, $alamat)) {
+        if ($pegawai->create($idDepartemen, $nama, $tempatLahir, $tglLahir, $jenisKelamin, $alamat)) {
             sendResponse(true, 'Success create pegawai', null);
         } else {
             sendResponse(false, 'Error create pegawai', null);
         }
         break;
     case 'update':
-        checkParameter(['id', 'id_departemen', 'nama', 'gender', 'alamat']);
+        checkParameter(['id', 'id_departemen', 'nama', 'tempat_lahir', 'tgl_lahir','jenis_kelamin', 'alamat']);
         $id = $_REQUEST['id'];
         $idDepartemen = $_REQUEST['id_departemen'];
         $nama = $_REQUEST['nama'];
-        $gender = $_REQUEST['gender'];
+        $tempatLahir = $_REQUEST['tempat_lahir'];
+        $tglLahir = $_REQUEST['tgl_lahir'];
+        $jenisKelamin = $_REQUEST['jenis_kelamin'];
         $alamat = $_REQUEST['alamat'];
-        if ($pegawai->update($id, $idDepartemen, $nama, $gender, $alamat)) {
+        if ($pegawai->update($id, $idDepartemen, $nama, $tempatLahir, $tglLahir, $jenisKelamin, $alamat)) {
             sendResponse(true, 'Success update pegawai', null);
         } else {
             sendResponse(false, 'Error update pegawai', null);
