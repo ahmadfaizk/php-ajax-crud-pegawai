@@ -1,8 +1,6 @@
 $(function () {
     refreshData();
-    var dataPegawai = new Array();
     var table = $('#table').DataTable({
-        data: dataPegawai,
         columns: [{
                 data: 'no',
             },
@@ -21,6 +19,12 @@ $(function () {
             {
                 data: 'action',
             }
+        ],
+        columnDefs: [
+            {
+                targets: 5,
+                orderable: false,
+            }
         ]
     })
 
@@ -32,7 +36,6 @@ $(function () {
 
     function provideTable(data) {
         var no = 1;
-        dataPegawai = new Array();
         data.forEach(function (item) {
             item.no = no;
             item.action =
@@ -40,10 +43,9 @@ $(function () {
                 item.id + '">Edit</a> ' +
                 '<a href="javascript:void(0);" class="btn btn-danger btn-sm" id="btn-delete" data-id="' +
                 item.id + '">Hapus</a></td>';
-            dataPegawai.push(item);
             no++;
         })
-        table.clear().rows.add(dataPegawai).draw();
+        table.clear().rows.add(data).draw();
     }
     $.get('action-departemen.php?action=all', function (response) {
         response.data.forEach(function (item) {
@@ -55,7 +57,7 @@ $(function () {
         $('#form-title').html('Buat Pegawai Baru');
         $('#form').trigger('reset');
         $('#id').val(null);
-        $('input[name=gender]').attr('checked', false);
+        $('input[name=jenis_kelamin]').attr('checked', false);
         $('#form-modal').modal('show');
     })
     $('#btn-save').on('click', function (e) {

@@ -25,7 +25,7 @@ switch ($_REQUEST['action']) {
         if ($departemen->create($nama)) {
             sendResponse(true, 'Success create departemen', $data);
         } else {
-            sendResponse(false, 'Error create departemen', $data);
+            sendResponse(false, $departemen->getError(), $data);
         }
         break;
     case 'update':
@@ -35,7 +35,7 @@ switch ($_REQUEST['action']) {
         if ($departemen->update($id, $nama)) {
             sendResponse(true, 'Success update departemen', $data);
         } else {
-            sendResponse(false, 'Error update departemen', $data);
+            sendResponse(false, $departemen->getError(), $data);
         }
         break;
     case 'delete':
@@ -44,7 +44,7 @@ switch ($_REQUEST['action']) {
         if ($departemen->delete($id)) {
             sendResponse(true, 'Success delete departemen', $data);
         } else {
-            sendResponse(false, 'Error delete departemen', $data);
+            sendResponse(false, $departemen->getError(), $data);
         }
         break;
     default:

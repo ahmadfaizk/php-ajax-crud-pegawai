@@ -30,4 +30,8 @@ class Departemen extends BaseModel {
         $sql = "DELETE FROM departemen WHERE id=$id";
         return $this->db->getResult($sql);
     }
+
+    public function getError() {
+        return $this->db->getError();
+    }
 }
