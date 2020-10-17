@@ -1,9 +1,6 @@
 $(function () {
     refreshData();
-
-    var dataDepartemen = new Array();
     var table = $('#table').DataTable({
-        data: dataDepartemen,
         columns: [{
                 data: 'no',
             },
@@ -27,21 +24,17 @@ $(function () {
 
     function provideTable(data) {
         var no = 1;
-        dataDepartemen = new Array();
+        var departemens = new Array();
         data.forEach(function (item) {
-            var departemen = {
-                no: no,
-                nama: item.nama,
-                jumlah_pegawai: item.jumlah_pegawai,
-                action: '<a href="javascript:void(0);" class="btn btn-info btn-sm" id="btn-edit" data-id="' +
-                    item.id + '">Edit</a> ' +
-                    '<a href="javascript:void(0);" class="btn btn-danger btn-sm" id="btn-delete" data-id="' +
-                    item.id + '">Hapus</a></td>'
-            }
-            dataDepartemen.push(departemen);
+            item.no = no;
+            item.action = '<a href="javascript:void(0);" class="btn btn-info btn-sm" id="btn-edit" data-id="' +
+                item.id + '">Edit</a> ' +
+                '<a href="javascript:void(0);" class="btn btn-danger btn-sm" id="btn-delete" data-id="' +
+                item.id + '">Hapus</a></td>';
+            departemens.push(item);
             no++;
         })
-        table.clear().rows.add(dataDepartemen).draw();
+        table.clear().rows.add(departemens).draw();
     }
     $('#btn-create').on('click', function () {
         $('#form-title').html('Buat Departemen Baru');

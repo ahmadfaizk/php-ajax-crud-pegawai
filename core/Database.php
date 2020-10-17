@@ -2,8 +2,8 @@
 
 class Database {
     private $dbHost = 'localhost';
-    private $dbUser = 'admin';
-    private $dbPassword = 'admin';
+    private $dbUser = 'root';
+    private $dbPassword = '';
     private $dbName = 'perusahaan';
     private $db;
 

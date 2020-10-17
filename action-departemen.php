@@ -23,9 +23,9 @@ switch ($_REQUEST['action']) {
         checkParameter(['nama']);
         $nama = $_REQUEST['nama'];
         if ($departemen->create($nama)) {
-            sendResponse(true, 'Success create departemen', $data);
+            sendResponse(true, 'Success create departemen', null);
         } else {
-            sendResponse(false, $departemen->getError(), $data);
+            sendResponse(false, $departemen->getError(), null);
         }
         break;
     case 'update':
@@ -33,18 +33,18 @@ switch ($_REQUEST['action']) {
         $id = $_REQUEST['id'];
         $nama = $_REQUEST['nama'];
         if ($departemen->update($id, $nama)) {
-            sendResponse(true, 'Success update departemen', $data);
+            sendResponse(true, 'Success update departemen', null);
         } else {
-            sendResponse(false, $departemen->getError(), $data);
+            sendResponse(false, $departemen->getError(), null);
         }
         break;
     case 'delete':
         checkParameter(['id']);
         $id = $_REQUEST['id'];
         if ($departemen->delete($id)) {
-            sendResponse(true, 'Success delete departemen', $data);
+            sendResponse(true, 'Success delete departemen', null);
         } else {
-            sendResponse(false, $departemen->getError(), $data);
+            sendResponse(false, $departemen->getError(), null);
         }
         break;
     default:
